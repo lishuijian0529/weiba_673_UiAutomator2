@@ -1,0 +1,32 @@
+Import "shanhai.lua"
+Dim token = "70edbc92-2857-4c55-a4ed-ebb7ca8e3379"
+While True
+	Delay 3000
+	SnapShot "/sdcard/Download/screen.png"
+	dim qrcode_res = Encode.JsonToTable(ShanHai.execute("su root curl -X POST \"http://www.wwei.cn/qrcode-fileupload.html?op=index_jiema\" -F \"file=@/sdcard/Download/screen.png\" "))
+	dim qr_url = qrcode_res["jiema"]
+	If UTF8.InStr(1, qr_url, "https") > 0 Then 
+		ShowMessage "进入二维码扫描页面"
+		ShowMessage "解析的二维码地址:"&qr_url
+		Dim qrcode = "\"qrcode\":\" "&qr_url&" \" "
+		Dim json_data = "'{"&qrcode&",\"phone\":\"\",\"describe\":\"任务\",\"title\":\"WX扫码\",\"expire\":300}'"
+		dim task_res = Encode.JsonToTable(ShanHai.execute("curl -X POST \"http://api.91huojian.com/task\" -H \"Authorization:Bearer "&token&"\" -H \"Content-Type:application/json\" -X POST --data " &json_data ))
+		If task_res["code"] = "1007" Then 
+			ShowMessage "余额不足,请尽快充值,充值后再次运行脚本即可"
+		Else
+			Dim task_id = task_res["data"]
+			ShowMessage "任务上传成功,返回的任务Id为:" & task_id
+			For i = 0 To 200
+				ShanHai.execute ("su root uiautomator dump /sdcard/Download/uidump.xml")
+				dim ui_xml = ShanHai.execute ("su root cat /sdcard/Download/uidump.xml")
+				If UTF8.InStr(1, ui_xml, "10690700367") > 0 Then 
+					ShanHai.execute ("curl \"http://api.91huojian.com/task/finish?taskId=" & task_id & "\" -H \"Authorization:Bearer " & token & "\" ")
+					ShowMessage "任务确认完成"
+					Exit For
+				End If
+					ShowMessage "等待扫码,请稍等"
+				Next
+		End If
+	End If 
+Wend
+
