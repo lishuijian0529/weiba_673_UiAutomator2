@@ -1,0 +1,1 @@
+adb shell curl -g -H \"Content-Type:application/json\" \"http://127.0.0.1:8888/cmd\" -X POST -d '{\"group\":\"AppTool\",\"action\":\"cloudCodeRecover\",\"params\":[\"wbp:3d63ecdab7d9699b3de04cf89089faf3\"]}'

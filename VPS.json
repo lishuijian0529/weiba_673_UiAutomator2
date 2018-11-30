@@ -1,0 +1,109 @@
+[
+{
+	"hostname":"222.190.133.116",
+	"port":20172,
+	"username":"root",
+	"password":"kk123",
+	"deviceid":"fcd7f6ad",
+	"connection_command":"",
+	"disconnect_command":""
+},
+{
+	"hostname":"222.190.133.116",
+	"port":20032 ,
+	"username":"root",
+	"password":"kk123",
+	"deviceid":"e10dfe26"
+},
+{
+	"hostname":"222.186.134.227",
+	"port":37002,
+	"username":"root",
+	"password":"kk123",
+	"deviceid":"9361a50e"
+},
+{
+	"hostname":"222.186.150.195",
+	"port":20320,
+	"username":"root",
+	"password":"kk123",
+	"deviceid":"af799bab"
+},
+{
+	"hostname":"222.187.196.195",
+	"port":20208,
+	"username":"root",
+	"password":"kk123",
+	"deviceid":"a5b3c5ef"
+},
+{
+	"hostname":"61.155.203.50",
+	"port":20170,
+	"username":"root",
+	"password":"kk123",
+	"deviceid":"b94beedd"
+},
+{
+	"hostname":"222.186.134.227",
+	"port":43172,
+	"username":"root",
+	"password":"kk123",
+	"deviceid":"db34e0c"
+},
+{
+	"hostname":"61.155.203.50",
+	"port":20176,
+	"username":"root",
+	"password":"kk123",
+	"deviceid":"764f2861"
+},
+{
+	"hostname":"58.220.91.146",
+	"port":20026,
+	"username":"root",
+	"password":"kk123",
+	"deviceid":"ed5aad46"
+},
+{
+	"hostname":"222.190.133.116",
+	"port":20034,
+	"username":"root",
+	"password":"kk123",
+	"deviceid":"a4bb380f"
+},
+{
+	"hostname":"61.160.23.154",
+	"port":20069,
+	"username":"root",
+	"password":"kk123",
+	"deviceid":"5696c5d1"
+},
+{
+	"hostname":"222.186.134.227",
+	"port":37004,
+	"username":"root",
+	"password":"kk123",
+	"deviceid":"8a4cb8d9"
+},
+{
+	"hostname":"222.186.134.227",
+	"port":43192,
+	"username":"root",
+	"password":"kk123",
+	"deviceid":"70aeacb8"
+},
+{
+	"hostname":"58.216.241.180",
+	"port":20134,
+	"username":"root",
+	"password":"kk123",
+	"deviceid":"6af6ba6a"
+},
+{
+	"hostname":"58.220.41.156",
+	"port":20018,
+	"username":"root",
+	"password":"kk123",
+	"deviceid":"d447bed2"
+}
+]
